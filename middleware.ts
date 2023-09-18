@@ -16,6 +16,8 @@ export default async function middleware(req: NextRequest, res: NextResponse) {
 
     const session = await getSession({ req: requestForNextAuth });
 
+    console.log(session);
+
     if (session) {
         return NextResponse.next();
     }

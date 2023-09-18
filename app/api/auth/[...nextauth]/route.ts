@@ -18,10 +18,9 @@ const handler = NextAuth({
                 // Add logic here to look up the user from the credentials supplied
                 //const user = { id: "1", name: "jwick", email: "jwick@example.com" };
 
-                const urlTest = 'http://localhost:8080/api/auth/signin';
-                const urlProd = 'http://127.0.0.1/project-security-backend/api/auth/signin';
+                const url = process.env.BACKEND_URL;
 
-                const res = await fetch(urlTest, {
+                const res = await fetch(`${url}/api/auth/signin`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
